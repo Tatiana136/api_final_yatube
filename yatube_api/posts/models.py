@@ -46,7 +46,7 @@ class Follow(models.Model):
         User, on_delete=models.CASCADE, related_name='follower')
     following = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='following', null=False)
-    
+
     class Meta:
         # В БД невозможно создать более одной строки с оинаковыми полями.
         unique_together = ('user', 'following')
