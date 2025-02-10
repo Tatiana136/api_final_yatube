@@ -1,5 +1,4 @@
 from django.db import models
-# from django.db.models import CheckConstraint, Q
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
@@ -51,9 +50,3 @@ class Follow(models.Model):
     class Meta:
         # В БД невозможно создать более одной строки с оинаковыми полями.
         unique_together = ('user', 'following')
-        # constraints = [
-        #     CheckConstraint(
-        #         name='self_follow',
-        #         check=Q(user__ne=models.F('following')),
-        #     ),
-        # ]
