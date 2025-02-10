@@ -35,7 +35,6 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class FollowSerializer(serializers.ModelSerializer):
-    http_method_names = ['post', 'get']
     user = serializers.SlugRelatedField(
         slug_field='username',
         queryset=User.objects.all(),
